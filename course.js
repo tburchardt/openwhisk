@@ -21,16 +21,12 @@
  * @param name A person's name.
  * @param place Where the person is from.
  */
+var crypto = require('crypto');
 function main(args) {
-   const course = args && args.course|| "";
-   const name = "Jonathan";
-//	console.log("hallo");
-	var crypto = require('crypto');
-//creating hash object 
-   var hash = crypto.createHash('md5');
-
-   var data =  hash.update(course+name, 'utf-8');
-	console.log(course+name);
+  const course = args && args.course|| "";
+  const name = "Jonathan";
+  var hash = crypto.createHash('md5');
+  var data =  hash.update(course+name, 'utf-8');
     return {'result': data.digest('hex')
 }	    
 }
